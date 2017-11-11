@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+# first we check if there was any argument passed 
+var=$1
+if [[ $var = *[!\ ]* ]]; then
+  echo "gonna ignore the given file type"
+else
+  echo "no file was given to be ignored, aborting"
+  exit 1;
+fi
+
+# this only accepts one argument
+echo *$var>>.gitignore
