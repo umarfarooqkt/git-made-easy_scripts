@@ -1,0 +1,17 @@
+# $1 is the command u enetered as the name of the project
+
+g=$1
+
+# You'll see this if statement in other scripts as well 
+# it just checks to see if a name of the project was entered
+
+if [[ $g = *[!\ ]* ]]; 
+then
+  echo "recording note for project " $project
+else
+  echo "project consists of spaces only, aborting"
+  exit 1;
+fi
+mkdir $g
+cd $g
+pwd > ~/.git_root
