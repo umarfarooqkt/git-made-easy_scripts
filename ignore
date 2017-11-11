@@ -1,0 +1,18 @@
+#!/bin/bash 
+
+# first we check if there was any argument passed 
+var=$1
+if [[ $var = *[!\ ]* ]]; then
+  echo "gonna ignore the given files"
+else
+  echo "no file was given to be ignored, aborting"
+  exit 1;
+fi
+
+# now we are going to be iterating through the arguments 
+while [ $# -ne 0 ]
+  do
+   echo $1"\n">>.gitignore
+   git rm --cached $1
+    shift
+done

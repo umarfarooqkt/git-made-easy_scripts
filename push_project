@@ -1,3 +1,5 @@
+#!/bin/bash 
+
 cd `cat ~/.git_root`
 project=$1
 if [[ $project = *[!\ ]* ]]; then
